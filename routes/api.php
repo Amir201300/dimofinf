@@ -17,8 +17,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->group(function () {
 
+    /** Auth Routes */
     Route::prefix('Auth')->group(function () {
         Route::get('/my_info', 'UserController@my_info');
+    });
+
+    /** Post Routes */
+    Route::prefix('Post')->group(function () {
+        Route::get('/posts', 'PostController@posts');
+        Route::post('/save_post', 'PostController@save_post');
     });
 });
 

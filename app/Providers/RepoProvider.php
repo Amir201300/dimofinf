@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Interfaces\IPostRepo;
 use App\Interfaces\IUserRepo;
+use App\Repos\PostRepo;
 use App\Repos\UserRepo;
 use Illuminate\Support\ServiceProvider;
 
@@ -28,6 +30,11 @@ class RepoProvider extends ServiceProvider
         $this->app->bind(
             IUserRepo::class,
             UserRepo::class
+        );
+
+        $this->app->bind(
+            IPostRepo::class,
+            PostRepo::class
         );
     }
 }

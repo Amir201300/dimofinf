@@ -12,6 +12,18 @@ class UserRepo implements IUserRepo {
     use \App\Traits\ApiResponseTrait;
 
     /***
+     * @param $phone
+     * @return AppResult|mixed
+     */
+    public function getUserByPhone($phone)
+    {
+        $user=User::where('phone',$phone)->first();
+        if(is_null($user))
+            return AppResult::error('user not exist');
+        return AppResult::success($user);
+    }
+
+    /***
      * @param $payload
      * @return User|mixed
      */
@@ -25,17 +37,5 @@ class UserRepo implements IUserRepo {
         $user->active_code=NumberHelper::getInstance()->generateCode();
         $user->save();
         return $user;
-    }
-
-    /***
-     * @param $phone
-     * @return AppResult|mixed
-     */
-    public function getUserByPhone($phone)
-    {
-        $user=User::where('phone',$phone)->first();
-        if(is_null($user))
-            return AppResult::error('user not exist');
-        return AppResult::success($user);
     }
 }
