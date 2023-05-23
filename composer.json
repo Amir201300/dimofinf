@@ -15,6 +15,7 @@
         "laravel/tinker": "^2.5",
         "mcamara/laravel-localization": "^1.4",
         "phpxmlrpc/phpxmlrpc": "4",
+        "twilio/sdk": "^7.3",
         "yajra/laravel-datatables": "^1.5"
     },
     "require-dev": {
@@ -30,11 +31,7 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        },
-        "files" : [
-            "app/Helpers/imagesHelper.php",
-            "app/Helpers/MainFunctionHelper.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {

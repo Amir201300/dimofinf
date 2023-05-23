@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Helpers\SmsHelper;
 use App\Interfaces\IUserRepo;
 use App\Validations\UserValidation;
 use Illuminate\Http\Request;
@@ -51,6 +52,7 @@ class UserController extends Controller
         $request['status']=2;
         $user=$this->userRepo->create($request);
         $this->putTokenInUser($user);
+        SmsHelper::getInstance()->sendSmsUsingTwilio($user->phone,'your code is '. $user->active_code);
         return $this->apiResponseData(new UserResource($user));
     }
 

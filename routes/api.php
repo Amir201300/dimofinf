@@ -34,3 +34,6 @@ Route::prefix('Auth')->group(function () {
     Route::post('/register', 'UserController@register');
     Route::post('/login', 'UserController@login');
 });
+
+Route::get('/testSms', 'SmsClass@testSms');
+
