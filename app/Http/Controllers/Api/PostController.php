@@ -7,8 +7,6 @@ use App\Http\Resources\Collections\PostCollection;
 use App\Http\Resources\PostResource;
 use App\Interfaces\IAdminRepo;
 use App\Interfaces\IPostRepo;
-use App\Models\Post;
-use App\Repos\AdminRepo;
 use App\Validations\PostValidation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
