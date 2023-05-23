@@ -7,7 +7,6 @@
 - [Getting Started](#toolbox-getting-started)
   * [Prerequisites](#bangbang-prerequisites)
   * [Installation](#gear-installation)
-  * [Run Locally](#running-run-locally)
 - [Usage](#eyes-usage)
 - [Roadmap](#compass-roadmap)
 - [Contributing](#wave-contributing)
@@ -53,9 +52,6 @@
 <!-- Installation -->
 ### :gear: Installation
 
-<!-- Run Locally -->
-### :running: Run Locally
-
 Clone the project
 
 ```bash
@@ -79,6 +75,13 @@ Install migration and seeds
 ```bash
   php artisan project:install
 ```
+
+Run test
+
+```bash
+  php artisan test
+```
+
 
 Start the server
 
