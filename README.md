@@ -45,19 +45,13 @@
 <!-- Prerequisites -->
 ### :bangbang: Prerequisites
 
-make sure you have Composer installed on your machine.
+- make sure you have Composer installed on your machine.
 <a href="https://getcomposer.org/">Composer</a>
+
+- install xampp server php v 8.0 
 
 <!-- Installation -->
 ### :gear: Installation
-
-Install my-project with npm
-
-```bash
-  yarn install my-project
-  cd my-project
-```
-
 
 <!-- Run Locally -->
 ### :running: Run Locally
@@ -65,25 +59,31 @@ Install my-project with npm
 Clone the project
 
 ```bash
-  git clone https://github.com/Louis3797/awesome-readme-template.git
+  git clone https://github.com/Amir201300/dimofinf
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd dimofinf
 ```
 
 Install dependencies
 
 ```bash
-  yarn install
+  composer install
+```
+
+Install migration and seeds
+
+```bash
+  php artisan project:install
 ```
 
 Start the server
 
 ```bash
-  yarn start
+  php artisan serve
 ```
 
 
