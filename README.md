@@ -163,4 +163,10 @@ class AppResult
 ```
 
 <!-- dashboard -->
-## :dashboard
+## dashboard
+- to login to project dashboard use this link 
+```bash
+  <base_url>/Admin/loin
+```
+email : admin@admin.com 
+password : 12345678
