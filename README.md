@@ -163,4 +163,4 @@ class AppResult
 ```
 
 <!-- dashboard -->
-## :dashboard: dashboard
+## :dashboard
