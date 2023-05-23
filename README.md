@@ -8,6 +8,7 @@
   * [Prerequisites](#bangbang-prerequisites)
   * [Installation](#gear-installation)
 - [Usage](#eyes-usage)
+- [dashboard link](#dashboard)
 
   
 
@@ -160,3 +161,6 @@ class AppResult
 
 }
 ```
+
+<!-- dashboard -->
+## :dashboard: dashboard
