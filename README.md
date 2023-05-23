@@ -8,7 +8,6 @@
   * [Prerequisites](#bangbang-prerequisites)
   * [Installation](#gear-installation)
 - [Usage](#eyes-usage)
-- [Roadmap](#compass-roadmap)
 - [Contributing](#wave-contributing)
   * [Code of Conduct](#scroll-code-of-conduct)
 - [License](#warning-license)
@@ -92,23 +91,44 @@ Start the server
 
 <!-- Usage -->
 ## :eyes: Usage
+using : 
+- singleton design pattern in my helpers
 
-Use this space to tell a little more about your project and how it can be used. Show additional screenshots, code samples, demos or link to other resources.
+```php
+namespace App\Helpers;
 
+class DateHelper
+{
+    private static $instance = null;
 
-```javascript
-import Component from 'my-project'
+    private function __construct()
+    {
+    }
 
-function App() {
-  return <Component />
+    public static function getInstance()
+    {
+        if (self::$instance === null) {
+            self::$instance = new self();
+        }
+
+        return self::$instance;
+    }
+
+    public function customDateFormat($date){
+        return date('m/d/Y', strtotime($date));
+    }
+
+    public function customTimeFormat($date){
+        return date('h:i a', strtotime($date));
+    }
+
+    public static function dispose()
+    {
+        self::$instance = null;
+    }
 }
 ```
 
-<!-- Roadmap -->
-## :compass: Roadmap
-
-* [x] Todo 1
-* [ ] Todo 2
 
 <!-- Contributing -->
 ## :wave: Contributing
