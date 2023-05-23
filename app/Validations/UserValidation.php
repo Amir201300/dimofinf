@@ -16,11 +16,11 @@ class UserValidation implements IValidation
     public function validate($payload)
     {
         $input = $payload->all();
-        $user_id=Auth::check() ? Auth::user()->id : null;
+        $user_id=$payload->user_id ? $payload->user_id : null;
         $validator = Validator::make($input, [
             'phone' => $user_id  ? 'required|unique:users,phone,'.$user_id :'required|unique:users' ,
             'email' => $user_id  ? 'required|unique:users,email,'.$user_id.'|regex:/(.+)@(.+)\.(.+)/i' : 'required|unique:users|regex:/(.+)@(.+)\.(.+)/i',
-            'username' => $user_id  ?  'required|unique:users,username,'.$user_id :'required|unique:users' ,
+            'username' =>  'required' ,
             'password' => $user_id ? '' : 'required'  ,
         ]);
         if ($validator->fails()) {

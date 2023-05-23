@@ -24,8 +24,23 @@ class PostRepo implements IPostRepo {
             $posts=$posts->where('user_id',$filter->user_id);
         if($filter->not_id)
             $posts=$posts->where('user_id','!=',$filter->not_id);
-        $posts=$posts->paginate(10);
+        if($filter->not_paginate)
+            $posts=$posts->get();
+        else
+            $posts=$posts->paginate(10);
         return $posts;
+    }
+
+    /**
+     * @param $id
+     * @return AppResult|mixed
+     */
+    public function getPostById($id)
+    {
+        $post=Post::where('id',$id)->first();
+        if(is_null($post))
+            return AppResult::error('post not exist');
+        return AppResult::success($post);
     }
 
     /**
@@ -43,15 +58,29 @@ class PostRepo implements IPostRepo {
         return $post;
     }
 
-    /**
-     * @param $id
-     * @return AppResult|mixed
+    /***
+     * @param $payload
+     * @param $post
+     * @return mixed
      */
-    public function getPostById($id)
+    public function update($payload,$post)
     {
-        $post=Post::where('id',$id)->first();
-        if(is_null($post))
-            return AppResult::error('post not exist');
-        return AppResult::success($post);
+        $post->user_id=$payload->user_id;
+        $post->title=$payload->title;
+        $post->description=$payload->description;
+        $post->phone=$payload->phone;
+        $post->save();
+        return $post;
     }
+
+    /**
+     * @param $post
+     * @return mixed|void
+     */
+    public function delete($post)
+    {
+        $post->delete();
+    }
+
+
 }

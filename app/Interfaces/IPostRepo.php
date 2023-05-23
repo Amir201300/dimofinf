@@ -8,6 +8,13 @@ interface IPostRepo {
      * @return mixed
      */
     public function getPosts($filter);
+
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function getPostById($id);
+
     /**
      * @param $payload
      * @return mixed
@@ -15,8 +22,17 @@ interface IPostRepo {
     public function create($payload);
 
     /**
-     * @param $id
+     * @param $payload
+     * @param $post
      * @return mixed
      */
-    public function getPostById($id);
+    public function update($payload,$post);
+
+    /**
+     * @param $post
+     * @return mixed
+     */
+    public function delete($post);
+
+
 }

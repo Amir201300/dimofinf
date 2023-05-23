@@ -48,6 +48,7 @@ class UserController extends Controller
         $validateUser=$this->userValidation->validate($request);
         if($validateUser->operationType==ERROR)
             return $this->apiResponseMessage(0,$validateUser->error,400);
+        $request['status']=2;
         $user=$this->userRepo->create($request);
         $this->putTokenInUser($user);
         return $this->apiResponseData(new UserResource($user));

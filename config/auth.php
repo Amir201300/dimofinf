@@ -44,6 +44,16 @@ return [
             'driver' => 'passport',
             'provider' => 'users',
         ],
+        'Admin' => [
+            'driver' => 'session',
+            'provider' => 'Admin',
+        ],
+
+        'api-Admin' => [
+            'driver' => 'token',
+            'provider' => 'Admin',
+            'hash' => false,
+        ],
     ],
 
     /*
@@ -69,10 +79,10 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'Admin' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
     ],
 
     /*
