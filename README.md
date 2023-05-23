@@ -3,7 +3,6 @@
 
 - [About the Project](#star2-about-the-project)
   * [Tech Stack](#space_invader-tech-stack)
-  * [Features](#dart-features)
 - [Getting Started](#toolbox-getting-started)
   * [Prerequisites](#bangbang-prerequisites)
   * [Installation](#gear-installation)
@@ -24,16 +23,9 @@
 ### :space_invader: Tech Stack
 
 - PHP 8.0</p>
-- Laravel 8.75"
-- MySQL MySQL
+- Laravel 8.75
+- MySQL Database
 
-<!-- Features -->
-### :dart: Features
-
-- Feature 1
-- Feature 2
-- Feature 3
- 
 <!-- Getting Started -->
 ## 	:toolbox: Getting Started
 
@@ -87,11 +79,21 @@ Start the server
 
 <!-- Usage -->
 ## :eyes: Usage
-structure : 
-- models 
-- controllers
-- repository binding with interfaces 
+### architecture : 
+I used a clean arch for this project considering `Models` as dataSources in the data layer 
+and for domain layer I Just used the repos, and I think there is no need to use `use_cases` so I make all the logic in the controllers 
+I used the default DI for laravel to inject the Dependencies, all the connections between layers are throw interfaces there is no Direct Dependencies or circular one,
+I Matched some of `SOLID` Principles I used single responsibility and Interface segregation in validation class which used to validate data, 
+also used Dependency inversion by separating layers and prevent circular Dependencies
 
+So the main components of the project is : 
+- `Models` this I used as `Data sources` so I can get the data from the database Directly as it is.
+- `Repos` this component which all logic applied on the data including querying, parsing and others 
+- `controllers` last layer, upper layer uses all others repos, and services to apply the final logic and provide it to the end user
+- `Helpers` these are a singleton classes that created once it needed and never distroyed after that we need this to make common functions and store data all around the project 
+- `validators` those for validating data and apply some logic on payloads before providing it to repos make sure all is right and return errors if not
+
+  
 Designs Patterns :  
 - singleton design pattern in my helpers
 
@@ -164,9 +166,9 @@ class AppResult
 
 <!-- dashboard -->
 ## dashboard
-- to login to project dashboard use this link 
+- for the login to project dashboard use this link 
 ```bash
-  <base_url>/Admin/loin
+  <base_url>/Admin/Auth/login
 ```
 email : admin@admin.com 
 password : 12345678
