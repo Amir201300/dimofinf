@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Helpers\NotificationHelper;
 use App\Http\Resources\Collections\PostCollection;
 use App\Http\Resources\PostResource;
+use App\Interfaces\IAdminRepo;
 use App\Interfaces\IPostRepo;
 use App\Models\Post;
+use App\Repos\AdminRepo;
 use App\Validations\PostValidation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -17,11 +20,13 @@ class PostController extends Controller
 
     private $postRepo;
     private $postValidation;
+    private $adminRepo;
 
-    public function __construct(IPostRepo $postRepo,PostValidation $postValidation)
+    public function __construct(IPostRepo $postRepo,PostValidation $postValidation,IAdminRepo $adminRepo)
     {
         $this->postRepo = $postRepo;
         $this->postValidation = $postValidation;
+        $this->adminRepo = $adminRepo;
     }
 
     /**
@@ -44,6 +49,7 @@ class PostController extends Controller
             return $this->apiResponseMessage(0,$validatePost->error,400);
         $request['user_id']=Auth::user()->id;
         $post=$this->postRepo->create($request);
+        NotificationHelper::getInstance()->sendNotification($this->adminRepo->getSuperAdmin()->firebase_token,'new post','new post published');
         return $this->apiResponseData(new PostResource($post));
     }
 

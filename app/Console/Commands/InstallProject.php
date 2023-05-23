@@ -39,5 +39,7 @@ class InstallProject extends Command
     {
         $command = "php artisan migrate:refresh --seed";
         exec($command);
+        $command="php artisan passport:install";
+        exec($command);
     }
 }
