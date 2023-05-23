@@ -4,8 +4,6 @@
 - [About the Project](#star2-about-the-project)
   * [Tech Stack](#space_invader-tech-stack)
   * [Features](#dart-features)
-  * [Color Reference](#art-color-reference)
-  * [Environment Variables](#key-environment-variables)
 - [Getting Started](#toolbox-getting-started)
   * [Prerequisites](#bangbang-prerequisites)
   * [Installation](#gear-installation)
@@ -30,9 +28,9 @@
 <!-- TechStack -->
 ### :space_invader: Tech Stack
 
-<p>PHP 8.0</p>
-<p>Laravel 8.75"</p>
-<p>MySQL MySQL</p>
+- PHP 8.0</p>
+- Laravel 8.75"
+- MySQL MySQL
 
 <!-- Features -->
 ### :dart: Features
@@ -41,37 +39,14 @@
 - Feature 2
 - Feature 3
  
-<!-- Color Reference -->
-### :art: Color Reference
-
-| Color             | Hex                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| Primary Color | ![#222831](https://via.placeholder.com/10/222831?text=+) #222831 |
-| Secondary Color | ![#393E46](https://via.placeholder.com/10/393E46?text=+) #393E46 |
-| Accent Color | ![#00ADB5](https://via.placeholder.com/10/00ADB5?text=+) #00ADB5 |
-| Text Color | ![#EEEEEE](https://via.placeholder.com/10/EEEEEE?text=+) #EEEEEE |
-
-
-<!-- Env Variables -->
-### :key: Environment Variables
-
-To run this project, you will need to add the following environment variables to your .env file
-
-`API_KEY`
-
-`ANOTHER_API_KEY`
-
 <!-- Getting Started -->
 ## 	:toolbox: Getting Started
 
 <!-- Prerequisites -->
 ### :bangbang: Prerequisites
 
-This project uses Yarn as package manager
-
-```bash
- npm install --global yarn
-```
+make sure you have Composer installed on your machine.
+<a href="https://getcomposer.org/">Composer</a>
 
 <!-- Installation -->
 ### :gear: Installation
