@@ -77,7 +77,6 @@ Run test
   php artisan test
 ```
 
-
 Start the server
 
 ```bash
@@ -87,7 +86,12 @@ Start the server
 
 <!-- Usage -->
 ## :eyes: Usage
-using : 
+structure : 
+- models 
+- controllers
+- repository binding with interfaces 
+
+Designs Patterns :  
 - singleton design pattern in my helpers
 
 ```php
@@ -124,7 +128,7 @@ class DateHelper
     }
 }
 ```
-- factory design pattern 
+- factory design pattern to handle my response result
 ```php
 <?php
 
