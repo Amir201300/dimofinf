@@ -52,7 +52,7 @@ class UserController extends Controller
         $request['status']=2;
         $user=$this->userRepo->create($request);
         $this->putTokenInUser($user);
-        SmsHelper::getInstance()->sendSmsUsingTwilio($user->phone,'your code is '. $user->active_code);
+//        SmsHelper::getInstance()->sendSmsUsingTwilio($user->phone,'your code is '. $user->active_code);
         return $this->apiResponseData(new UserResource($user));
     }
 

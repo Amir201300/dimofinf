@@ -35,5 +35,10 @@ Route::prefix('Auth')->group(function () {
     Route::post('/login', 'UserController@login');
 });
 
-Route::get('/testSms', 'SmsClass@testSms');
+
+/** Cron */
+Route::prefix('Cron')->group(function () {
+    Route::get('/daily_report', 'CronJobController@daily_report');
+});
+
 

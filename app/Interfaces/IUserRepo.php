@@ -10,6 +10,11 @@ interface IUserRepo {
     public function getUsers($filter);
 
     /**
+     * @return mixed
+     */
+    public function getDailyUsers();
+
+    /**
      * @param $id
      * @return mixed
      */

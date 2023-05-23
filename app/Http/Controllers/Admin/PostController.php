@@ -20,6 +20,7 @@ class PostController extends Controller
 
     private $postRepo;
     private $postValidation;
+    private $userRepo;
 
     public function __construct(IPostRepo $postRepo,PostValidation $postValidation,IUserRepo $userRepo)
     {

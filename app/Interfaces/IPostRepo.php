@@ -10,6 +10,11 @@ interface IPostRepo {
     public function getPosts($filter);
 
     /**
+     * @return mixed
+     */
+    public function getDailyPosts();
+
+    /**
      * @param $id
      * @return mixed
      */

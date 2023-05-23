@@ -33,8 +33,6 @@ class SmsHelper
                     "body" => $msg
                 )
             );
-
-        print($message->sid);
     }
 
     public static function dispose()

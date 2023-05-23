@@ -24,6 +24,14 @@ class UserRepo implements IUserRepo {
         return $users;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getDailyUsers()
+    {
+        return User::whereDay('created_at',now())->get();
+    }
+
     /***
      * @param $id
      * @return AppResult|mixed

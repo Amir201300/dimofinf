@@ -32,6 +32,14 @@ class PostRepo implements IPostRepo {
     }
 
     /**
+     * @return mixed
+     */
+    public function getDailyPosts()
+    {
+        return Post::whereDay('created_at',now())->get();
+    }
+
+    /**
      * @param $id
      * @return AppResult|mixed
      */
