@@ -81,8 +81,8 @@ Start the server
 ## :eyes: Usage
 ### architecture : 
 I used a clean arch for this project considering `Models` as dataSources in the data layer 
-and for domain layer I Just used the repos, and I think there is no need to use `use_cases` so I make all the logic in the controllers 
-I used the default DI for laravel to inject the Dependencies, all the connections between layers are throw interfaces there is no Direct Dependencies or circular one,
+and for domain layer I Just used the repos, and I think there is no need to use `use_cases` so I made all the logic in the controllers 
+I used the default DI for laravel to inject the Dependencies, all the connections between layers are through interfaces there is no Direct Dependencies or circular one,
 I Matched some of `SOLID` Principles I used single responsibility and Interface segregation in validation class which used to validate data, 
 also used Dependency inversion by separating layers and prevent circular Dependencies
 
